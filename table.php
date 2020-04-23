@@ -1,14 +1,18 @@
 <?php
     include_once 'demos/demo1.php';
     include 'cwindex.php';
-    
+
     if ($_GET['submit']=='INSERT'){ //if we pressed insert
+
         echo "Enter information:";
         echo "<br>";
-        echo "<i>For inserting a text, please enclosed text with quotation(' ')</i>";
+        //echo "<i>For inserting a text, please enclose text with quotation(' ')</i>";
         echo "<br>";
         echo "<br>";
+
+        //form
         echo "<form action = 'insert1.php' method = 'get'>";
+
         if(!empty($_GET["col"])){
             foreach($_GET["col"] as $col){
                 echo "$col<input type = 'checkbox', value = '$col', name = 'col[]' checked> : <input type = 'text' name = 'inscol[]'>";
@@ -17,7 +21,7 @@
             }
             echo "<input type = 'submit' name = 'insert' value = 'submit'>";
         }
-        
+
         echo "</form>";
         echo "<br>";
     echo "<table border='1' cellpadding='2'>";
@@ -32,7 +36,7 @@
 
 		$sql = "SELECT * FROM city;";
         $result = mysqli_query($conn, $sql);
-        
+
 			while($row = mysqli_fetch_assoc($result)){
                 echo "<tr>";
                 foreach($_GET["col"] as $col){
@@ -63,7 +67,7 @@
 
 		$sql = "SELECT * FROM city;";
         $result = mysqli_query($conn, $sql);
-        
+
 			while($row = mysqli_fetch_assoc($result)){
                 echo "<tr>";
                 foreach($_GET["col"] as $col){

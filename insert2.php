@@ -5,18 +5,19 @@
     if(isset($_GET['insert'])){
         if(!empty($_GET['inscol2'])){
             $column = $_GET["col2"];
-            $ins = $_GET["inscol2"]; 
-    
-            $inssql = implode(", ",$ins); //values to be inserted
+            $ins = $_GET["inscol2"];
+
+            $inssql1 = implode("', '",$ins); //values to be inserted
+            $inssql2 = "'" . $inssql1 . "'";
             $colsql = implode(", ",$column); //column name to be inserted
-            
-            $sql = "INSERT INTO country($colsql) VALUES($inssql)";
+
+            $sql = "INSERT INTO country($colsql) VALUES($inssql2)";
             if(mysqli_query($conn,$sql)){
                 echo "Values inserted";
             }
             else
                 echo "Values not inserted";
-                
+
             echo "<br>";
         }
     }
@@ -34,7 +35,7 @@
 
 		$sql = "SELECT * FROM country;";
         $result = mysqli_query($conn, $sql);
-        
+
 			while($row = mysqli_fetch_assoc($result)){
                 echo "<tr>";
                 foreach($_GET["col2"] as $col2){
@@ -50,6 +51,6 @@
     }
         echo "</table>";
 
-   
-    
+
+
 ?>

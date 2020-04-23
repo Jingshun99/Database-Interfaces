@@ -4,19 +4,22 @@
 
     if(isset($_GET['insert'])){
         if(!empty($_GET['inscol'])){
+
             $column = $_GET["col"];
-            $ins = $_GET["inscol"]; 
-    
-            $inssql = implode(", ",$ins); //values to be inserted
+            $ins = $_GET["inscol"];
+
+            // implode: concat the values with ", " in between each
+            $inssql1 = implode("', '",$ins); //values to be inserted
+            $inssql2 = "'" . $inssql1 . "'";
             $colsql = implode(", ",$column); //column name to be inserted
-            
-            $sql = "INSERT INTO city($colsql) VALUES($inssql)";
+
+            $sql = "INSERT INTO city($colsql) VALUES($inssql2)";
             if(mysqli_query($conn,$sql)){
                 echo "Values inserted";
             }
             else
                 echo "Values not inserted";
-                
+
             echo "<br>";
         }
     }
@@ -34,7 +37,7 @@
 
 		$sql = "SELECT * FROM city;";
         $result = mysqli_query($conn, $sql);
-        
+
 			while($row = mysqli_fetch_assoc($result)){
                 echo "<tr>";
                 foreach($_GET["col"] as $col){
@@ -50,6 +53,6 @@
     }
         echo "</table>";
 
-   
-    
+
+
 ?>

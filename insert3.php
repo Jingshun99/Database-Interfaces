@@ -4,19 +4,22 @@
 
     if(isset($_GET['insert'])){
         if(!empty($_GET['inscol3'])){
+
             $column = $_GET["col3"];
-            $ins = $_GET["inscol3"]; 
-    
-            $inssql = implode(", ",$ins); //values to be inserted
+            $ins = $_GET["inscol3"];
+
+            $inssql1 = implode("', '",$ins); //values to be inserted
+            $inssql2 = "'" . $inssql1 . "'";
+            //echo "$inssql2";
             $colsql = implode(", ",$column); //column name to be inserted
-            
-            $sql = "INSERT INTO lang($colsql) VALUES($inssql)";
+
+            $sql = "INSERT INTO lang($colsql) VALUES($inssql2)";
             if(mysqli_query($conn,$sql)){
                 echo "Values inserted";
             }
             else
                 echo "Values not inserted";
-                
+
             echo "<br>";
         }
     }
@@ -34,7 +37,7 @@
 
 		$sql = "SELECT * FROM lang;";
         $result = mysqli_query($conn, $sql);
-        
+
 			while($row = mysqli_fetch_assoc($result)){
                 echo "<tr>";
                 foreach($_GET["col3"] as $col3){
@@ -50,6 +53,6 @@
     }
         echo "</table>";
 
-   
-    
+
+
 ?>

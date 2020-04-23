@@ -5,7 +5,7 @@
     if ($_GET['submit']=='INSERT'){ //if we pressed insert
         echo "Enter information:";
         echo "<br>";
-        echo "<i>For inserting a text, please enclosed text with quotation(' ')</i>";
+        //echo "<i>For inserting a text, please enclosed text with quotation(' ')</i>";
         echo "<br>";
         echo "<br>";
         echo "<form action = 'insert3.php' method = 'get'>";
@@ -17,7 +17,7 @@
             }
             echo "<input type = 'submit' name = 'insert' value = 'submit'>";
         }
-        
+
         echo "</form>";
         echo "<br>";
     echo "<table border='1' cellpadding='2'>";
@@ -32,7 +32,7 @@
 
 		$sql = "SELECT * FROM lang;";
         $result = mysqli_query($conn, $sql);
-        
+
 			while($row = mysqli_fetch_assoc($result)){
                 echo "<tr>";
                 foreach($_GET["col3"] as $col3){
@@ -63,7 +63,7 @@
 
 		$sql = "SELECT * FROM lang;";
         $result = mysqli_query($conn, $sql);
-        
+
 			while($row = mysqli_fetch_assoc($result)){
                 echo "<tr>";
                 foreach($_GET["col3"] as $col3){
