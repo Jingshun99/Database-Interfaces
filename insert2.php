@@ -4,6 +4,7 @@
 
     if(isset($_GET['insert'])){
         if(!empty($_GET['inscol2'])){
+            
             $column = $_GET["col2"];
             $ins = $_GET["inscol2"];
 

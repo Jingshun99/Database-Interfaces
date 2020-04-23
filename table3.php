@@ -50,6 +50,7 @@
     }
 
     else{ //if we pressed select
+    echo "<b><ul><u>language</b></ul></u>";
     echo "<br>";
     echo "<table border='1' cellpadding='2'>";
     echo "<tr>";

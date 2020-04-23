@@ -14,6 +14,7 @@
             $colsql = implode(", ",$column); //column name to be inserted
 
             $sql = "INSERT INTO lang($colsql) VALUES($inssql2)";
+            //echo "$sql";
             if(mysqli_query($conn,$sql)){
                 echo "Values inserted";
             }

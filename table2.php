@@ -50,6 +50,7 @@
     }
 
     else{ //if we pressed select
+    echo "<b><ul><u>country</b></ul></u>";
     echo "<br>";
     echo "<table border='1' cellpadding='2'>";
     echo "<tr>";
@@ -69,7 +70,11 @@
                 foreach($_GET["col2"] as $col2){
                     echo "<td>".$row["$col2"]."</td>";
                 }
-                echo "<td><input type = 'submit' value = 'UPDATE'> <input type = 'submit' value = 'DELETE'></td>";
+
+                //echo "<td><input type = 'submit' value = 'UPDATE'> <input type = 'submit' value = 'DELETE'></td>";
+                echo '<td><form action="delete2.php" method="get"> <input type="hidden" name="primKey" value='.$row["Country_abb"].'> <input type="submit" name="delete" value="DELETE"></form></td>';
+                //echo "<td>".$row["Country_abb"]."</td>";
+
                 echo "</tr>";
             }
         }
@@ -79,4 +84,5 @@
     }
         echo "</table>";
 }
+
 ?>

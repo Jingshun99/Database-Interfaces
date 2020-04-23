@@ -54,6 +54,7 @@
     }
 
     else { //if we pressed select
+    echo "<b><ul><u>city</b></ul></u>";
     echo "<br>";
     echo "<table border='1' cellpadding='2'>";
     echo "<tr>";
@@ -73,7 +74,8 @@
                 foreach($_GET["col"] as $col){
                     echo "<td>".$row["$col"]."</td>";
                 }
-                echo "<td><input type = 'submit' value = 'UPDATE'> <input type = 'submit' value = 'DELETE'></td>";
+                //echo "<td><input type = 'submit' value = 'UPDATE'> <input type = 'submit' value = 'DELETE'></td>";
+                echo '<td><form action="delete1.php" method="get"> <input type="hidden" name="primKey" value='.$row["ID"].'> <input type="submit" name="delete" value="DELETE"></form></td>';
                 echo "</tr>";
             }
         }
