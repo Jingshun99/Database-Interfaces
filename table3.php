@@ -11,7 +11,7 @@
         echo "<form action = 'insert3.php' method = 'get'>";
         if(!empty($_GET["col3"])){
             foreach($_GET["col3"] as $col3){
-                echo "<p> <font color=white>$col3<input type = 'checkbox', value = '$col3', name = 'col3[]' checked> : <input type = 'text' name = 'inscol3[]'>";
+                echo "<p> <font color=white>$col3<input type = 'checkbox', value = '$col3', name = 'col3[]' checked> : <input type = 'text' name = 'inscol3[]' id='datacol' class='data'>";
                 echo "<br>";
                 echo "<br>";
             }

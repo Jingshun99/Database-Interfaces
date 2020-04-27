@@ -18,7 +18,7 @@
 
         if(!empty($_GET["col"])){
             foreach($_GET["col"] as $col){
-                echo "<p> <font color=white>$col<input type = 'checkbox', value = '$col', name = 'col[]' checked> : <input type = 'text' name = 'inscol[]'>";
+                echo "<p> <font color=white>$col<input type = 'checkbox', value = '$col', name = 'col[]' checked> : <input type = 'text' name = 'inscol[]' id='datacol' class='data'>";
                 echo "<br>";
                 echo "<br>";
             }
