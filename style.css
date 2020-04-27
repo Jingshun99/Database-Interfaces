@@ -68,6 +68,19 @@
 
 }
 
+.data{
+    width:150px;
+    margin:0 auto;
+    padding:5px;
+}
+
+#datacol{
+    background-color:rgb(97, 93, 93);
+    padding:5px;
+    color:white;
+    border: 2px solid rgb(27, 233, 96);
+}
+
 .submit1{
     width:60px;
     margin:0 auto;
@@ -90,7 +103,7 @@
 }
 
 #update_btn{
-    background-color:#130f40;
+    background-color:#28c9e6;
     padding:5px;
     color:white;
     text-align:center;
@@ -106,7 +119,7 @@
 }
 
 #delete_btn{
-    background-color:#130f40;
+    background-color:red;
     padding:5px;
     color:white;
     text-align:center;
