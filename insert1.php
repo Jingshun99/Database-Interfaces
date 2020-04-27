@@ -15,24 +15,24 @@
 
             $sql = "INSERT INTO city($colsql) VALUES($inssql2)";
             if(mysqli_query($conn,$sql)){
-                echo "Values inserted";
+                echo "<p> <font color=white>Values inserted";
             }
             else
-                echo "Values not inserted";
+                echo "<p> <font color=white>Values not inserted";
 
             echo "<br>";
         }
     }
 
     echo "<br>";
-    echo "<table border='1' cellpadding='2'>";
+    echo "<table border='1' cellpadding='2' bordercolor='#c23616'>";
     echo "<tr>";
     if(isset($_GET['insert'])){
         if(!empty($_GET["col"])){
             foreach($_GET["col"] as $col){
-                echo"<th>$col</th>";
+                echo"<th><p> <font color=white>$col</th>";
             }
-            echo"<th>ACTIONS</th>";
+            echo"<th><p> <font color=white>ACTIONS</th>";
         echo"</tr>";
 
 		$sql = "SELECT * FROM city;";
@@ -41,14 +41,14 @@
 			while($row = mysqli_fetch_assoc($result)){
                 echo "<tr>";
                 foreach($_GET["col"] as $col){
-                    echo "<td>".$row["$col"]."</td>";
+                    echo "<td><p> <font color=white>".$row["$col"]."</td>";
                 }
-                echo "<td><input type = 'submit' value = 'UPDATE'> <input type = 'submit' value = 'DELETE'></td>";
+                echo "<td><input type = 'submit' value = 'UPDATE' id='update_btn' class= 'update'> <input type = 'submit' value = 'DELETE' id='delete_btn' class= 'delete'></td>";
                 echo "</tr>";
             }
         }
         else{
-            echo "Please select at least one column";
+            echo "<p> <font color=white>Please select at least one column";
         }
     }
         echo "</table>";

@@ -14,26 +14,25 @@
             $colsql = implode(", ",$column); //column name to be inserted
 
             $sql = "INSERT INTO lang($colsql) VALUES($inssql2)";
-            //echo "$sql";
             if(mysqli_query($conn,$sql)){
-                echo "Values inserted";
+                echo "<p> <font color=white>Values inserted";
             }
             else
-                echo "Values not inserted";
+                echo "<p> <font color=white>Values not inserted";
 
             echo "<br>";
         }
     }
 
     echo "<br>";
-    echo "<table border='1' cellpadding='2'>";
+    echo "<table border='1' cellpadding='2' bordercolor='#fff200'>";
     echo "<tr>";
     if(isset($_GET['insert'])){
         if(!empty($_GET["col3"])){
             foreach($_GET["col3"] as $col3){
-                echo"<th>$col3</th>";
+                echo"<th><p> <font color=white>$col3</th>";
             }
-            echo"<th>ACTIONS</th>";
+            echo"<th><p> <font color=white>ACTIONS</th>";
         echo"</tr>";
 
 		$sql = "SELECT * FROM lang;";
@@ -42,14 +41,14 @@
 			while($row = mysqli_fetch_assoc($result)){
                 echo "<tr>";
                 foreach($_GET["col3"] as $col3){
-                    echo "<td>".$row["$col3"]."</td>";
+                    echo "<td><p> <font color=white>".$row["$col3"]."</td>";
                 }
-                echo "<td><input type = 'submit' value = 'UPDATE'> <input type = 'submit' value = 'DELETE'></td>";
+                echo "<td><input type = 'submit' value = 'UPDATE' id='update_btn' class= 'update'> <input type = 'submit' value = 'DELETE' id='delete_btn' class= 'delete'></td>";
                 echo "</tr>";
             }
         }
         else{
-            echo "Please select at least one column";
+            echo "<p> <font color=white>Please select at least one column";
         }
     }
         echo "</table>";
